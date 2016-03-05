@@ -1,0 +1,38 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="results">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+
+    <title>NodeXMlTest</title>
+
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="core.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL TODOS -->
+<body ng-controller="result-controller">
+<div class="container">
+    <div class="header">
+    <h1>NodeXmlTest</h1>
+    </div>
+        <h2 ng-repeat="result in allResults">{{result.title}} : {{result.result}}</h2>
+
+
+
+        <form class="add-result">
+
+                <input type="text" class="a-result" placeholder="some title" ng-model="formData.title">
+            <input type="text" class="a-result" placeholder="some results" ng-model="formData.result">
+
+            <button type="submit" class="submit-button" ng-click="sendResults()">Add Results</button>
+        </form>
+    </div>
+</body>
+</html>
