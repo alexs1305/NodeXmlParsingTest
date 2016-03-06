@@ -15,6 +15,17 @@ h1{
  margin:0 auto;
  float:none;
 }
+
+.main-container{
+    display:block;
+
+}
+.sidebar{
+    float:left;
+    margin-right: 1em;
+    border-right: solid thin  #403a27;
+}
+
 .submit-button{
  padding: 1em;
  margin: 1px;
@@ -34,4 +45,12 @@ h1{
 .add-result{
  margin-top: 1em;
  border-top: solid thin #403a27;
+}
+
+.refresh-button{
+ padding: 1em;
+ background-color:#e3f07b;
+ width:1em;
+   border-radius:5px;
+   border: solid thin #403a27;
 }
