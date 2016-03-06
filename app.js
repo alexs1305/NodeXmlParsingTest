@@ -46,12 +46,28 @@ app.post('/addresult', function(req,res, next){
 
 });
 
+app.get('/gettitles', function(req,res){
+    Results.find().distinct('title', function(error, titles) {
+    console.log(titles);
+        res.send(titles);
+    });
+});
+
 app.get('/getresults', function(req,res,next){
     Results.find(function(err, results) {
                         if (err)
                             res.send(err)
                         res.json(results);
                     });
+});
+
+app.post('/filterresults/:filter',function(req,res){
+
+    Results.find({ "title": req.params.filter },(function(err, results){
+        if(err)
+            res.send(err)
+        res.json(results)
+    }));
 });
 
 app.get('*', function(req,res){
